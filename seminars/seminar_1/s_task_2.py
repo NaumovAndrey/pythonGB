@@ -2,4 +2,4 @@
 import numpy.random
 
 _list = numpy.random.randint(-100, 101, 10)
-print(f'{_list} макксимальное число = {max(_list)}')
+print(f'{_list} максимальное число = {max(_list)}')
