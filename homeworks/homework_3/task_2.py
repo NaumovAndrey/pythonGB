@@ -15,7 +15,7 @@ def filling_list():
     return _list
 
 
-def composition_of_odd_elements(_list, composition=1):
+def composition_of_odd_elements(_list):
     '''
     :param _list: Входной список (рандомный)
     :param composition: Новый список с произведением пар чисел списка
