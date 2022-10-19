@@ -1,4 +1,6 @@
-# Даны два файла, в каждом из которых находится запись многочлена. Задача - сформировать файл, содержащий сумму многочленов.
+# Задана натуральная степень k.
+# Сформировать случайным образом список коэффициентов (значения от 0 до 100) многочлена и записать в файл многочлен степени k.
+# Пример: k=2 => 2*x² + 4*x + 5 = 0 или x² + 5 = 0 или 10*x² = 0
 
 def get_degree_of_number(num):
     return int((num.split("*x**"))[1])
@@ -8,11 +10,8 @@ def get_coefficient_of_number(num):
     return int((num.split("*x**"))[0])
 
 
-with open("read_1.txt", "r") as file:
-    a = file.readline().strip()
-
-with open("read_2.txt", "r") as file:
-    b = file.readline().strip()
+a = "87*x**21+55*x**3+39*x**2+97*x**1+221*x**0"
+b = "3*x**5+16*x**4+87*x**3+46*x**2+20*x**1+821*x**0"
 
 mas1 = a.split("+")
 mas2 = b.split("+")
@@ -29,10 +28,7 @@ for num2 in mas2:
 res = ""
 for i in range(len(result) - 1, 0, -1):
     if result[i] != 0:
-        res += f"{result[i]}*x**{i} +"
+        res += (f"{result[i]}*x**{i} + ")
 
 if result[0] != 0:
-    res += f"{result[i]}*x**{i}"
-
-with open("record.txt", "w") as file:
-    file.write(res)
+    print(f"{result[-1]}*x**{0}")
