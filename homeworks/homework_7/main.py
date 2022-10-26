@@ -3,6 +3,7 @@ import pprint
 import init
 import view
 import read_file as re
+import export as ex
 
 print('Телефонный справочник\n Введите:')
 
@@ -17,3 +18,8 @@ elif n == 1:
     print(us + '\n')
     item = re.read_f()
     re.print_dict(item)
+elif n == 4:
+    print(us + '\n')
+    r = re.read_f()
+    ex.v_exp(r)
+
