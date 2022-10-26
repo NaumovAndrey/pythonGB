@@ -3,13 +3,21 @@ def v_exp(li):
     if v == 1:
         exp_txt(li)
     if v == 2:
-        pass
+        exp_json(li)
     print('Экспорт выполнен')
 
 
 def exp_txt(li):
     n = input('Введите название файла: ')
     n = n + '.txt'
+    with open(n, 'w', encoding='UTF-8') as file:
+        for key, value in li.items():
+            file.write('%s:%s\n' % (key, value))
+
+
+def exp_json(li):
+    n = input('Введите название файла: ')
+    n = n + '.json'
     with open(n, 'w', encoding='UTF-8') as file:
         for key, value in li.items():
             file.write('%s:%s\n' % (key, value))
