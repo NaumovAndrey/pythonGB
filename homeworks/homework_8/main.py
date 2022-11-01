@@ -14,7 +14,7 @@ def init():
         view.print_dictionary(dct)
         us = view.output_from_the_user('-: ')
         if us == 1:
-            li_dct = base.getting_data_from_file()   # получение данных из файла
+            li_dct = base.getting_data_from_file()
             view.print_base(li_dct)
     elif menu_position == 2:
         li = view.add_directory()

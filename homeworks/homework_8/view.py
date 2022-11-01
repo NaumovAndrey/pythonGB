@@ -26,7 +26,6 @@ def print_dictionary(dct):
 
 def print_base(li_dct):
     '''Печать базу данных в табличном варианте'''
-    print(li_dct)
     df_2 = pandas.DataFrame([{li_dct}], index=[i for i in range(len(li_dct))])     # **********************************************************
     print(df_2)
 
