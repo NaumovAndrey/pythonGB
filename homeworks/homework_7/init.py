@@ -5,8 +5,3 @@ def creating_library(key, value):
             file.write('%s:%s\n' % (i, j))
 
 
-def add_directory():
-    key = input('Введите ФИО: ')
-    value = input('Введите номер телефона: ')
-    creating_library(key, value)
-    print('Контакт добавлен')
