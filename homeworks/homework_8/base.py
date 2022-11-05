@@ -1,4 +1,5 @@
 import ast
+import csv
 
 
 def add_database(dct):
@@ -10,20 +11,23 @@ def add_database(dct):
 
 def getting_data_from_file():
     '''Получение данных из файла'''
-    li = list()
+    ''' -> array[][]
+        line_list = [] 
+    dct = dict()
     with open('employee.txt', 'r', encoding='UTF-8') as file:
-        # dct = [{_.rstrip(':' '\n')} for _ in file]
+        for line in file:
+            line_list.append(line.strip().split(':'))
+    '''
+    dct = dict()  # -> dict{key: [array(value)]}
+    with open('employee.txt', 'r', encoding='UTF-8') as file:
+        for line in file.readlines():
+            line = line.strip()
+            key, value = line.split(":", 1)
+            value = value.rstrip('\n')
+            if dct.get(key, False) is False:  # если в словаре нет такого ключа
+                dct[key] = [value]
+            else:  # если есть
+                dct[key].append(value)  # Нет проверки на одинаковое значение
+    return dct
 
-        # lines = file.read().splitlines()  # read().splitlines()
-        #
-        # dic = {}
-        #
-        # for line in lines:
-        #     key, value = line.split(': ')
-        #     dic[key] = value
-        while (line := file.readline().rstrip()):
-            li.append(line)
-
-    return li
-
-print(getting_data_from_file())
+# print(getting_data_from_file())

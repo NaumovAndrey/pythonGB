@@ -26,8 +26,11 @@ def print_dictionary(dct):
 
 def print_base(li_dct):
     '''Печать базу данных в табличном варианте'''
-    df_2 = pandas.DataFrame([{li_dct}], index=[i for i in range(len(li_dct))])     # **********************************************************
-    print(df_2)
+    df = pandas.DataFrame.from_dict(li_dct)
+    pandas.set_option('display.max_columns', None)    # показывает все столбцы
+    pandas.options.display.expand_frame_repr = False    # убирает перенос столбцов
+    #data.head()
+    print(df)
 
 def output_from_the_user(text):
     '''Получает ключ словаря от пользователя (выбор элемента меню)'''
@@ -68,7 +71,7 @@ def add_directory():
 
 
 def viewing_employees():
-    '''Меню просмотр сотрудников-> Вывод выбора нескольких условий просмотра
+    '''Меню просмотр сотрудников-> Вывод выбора условия просмотра
     :return: словарь'''
     li = ['Просмотр всех данных', 'Поиск по ФИО', 'Поиск по номеру телефона', 'Поиск по должности',
           'Поиск по дате рождения']
