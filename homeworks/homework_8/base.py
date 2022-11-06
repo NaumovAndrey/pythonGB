@@ -12,31 +12,18 @@ def add_database(dct):
         for key, value in dct.items():
             if i < len(dct) - 1:
                 file.write(f'{value}, ')
-                i +=1
+                i += 1
             else:
                 file.write(f'{value}\n')
 
 
-# def getting_data_from_file():
-#     '''Получение данных из файла'''
-#     dct = dict()  # -> dict{key: [array(value)]}
-#     with open('employee.txt', 'r', encoding='UTF-8') as file:
-#         for line in file.readlines():
-#             line = line.strip()
-#             key, value = line.split(":", 1)
-#             value = value.rstrip('\n')
-#             if dct.get(key, False) is False:  # если в словаре нет такого ключа
-#                 dct[key] = [value]
-#             else:  # если есть
-#                 dct[key].append(value)  # Нет проверки на одинаковое значение (id = ФИО и год рождения или создать ~ паспорт как id)
-#     return dct
-
-
 def del_line(dct):
+    '''Запись нового сотрудника'''
     dct.to_csv('ch05_07.csv', index=False)
 
 
 def readcsv():
+    '''Чтение из файла'''
     dBase = pandas.read_csv('ch05_07.csv', sep=',')
     pandas.set_option('display.max_columns', None)  # показывает все столбцы
     pandas.options.display.expand_frame_repr = False  # убирает перенос столбцов

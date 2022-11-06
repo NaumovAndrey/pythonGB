@@ -16,7 +16,15 @@ def init():
         if us == 1:
             db = base.readcsv()
             view.printDB(db)
-            init()
+        elif us == 2:
+            print('не реализованна со 2 - 5 пункты')
+        elif us == 3:
+            print('не реализованна со 2 - 5 пункты')
+        elif us == 4:
+            print('не реализованна со 2 - 5 пункты')
+        elif us == 5:
+            print('не реализованна со 2 - 5 пункты')
+        init()
     elif menu_position == 2:
         li = view.add_directory()
         base.add_database(li)
