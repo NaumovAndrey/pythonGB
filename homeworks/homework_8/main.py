@@ -1,3 +1,5 @@
+import pprint
+
 import view
 import base
 
@@ -12,12 +14,25 @@ def init():
         view.print_dictionary(dct)
         us = view.output_from_the_user('-: ')
         if us == 1:
-            li_dct = base.getting_data_from_file()
-            view.print_base(li_dct)
+            db = base.readcsv()
+            view.printDB(db)
+            init()
     elif menu_position == 2:
         li = view.add_directory()
         base.add_database(li)
         print('Сотрудник добавлен\n')
+        init()
+    elif menu_position == 3:
+        db = base.readcsv()
+        view.printDB(db)
+        n = int(input('\nВведите номер позиции: '))
+        df = db.drop(labels=[n], axis=0)
+        view.printDB(df)
+        base.del_line(df)
+        print('Контакт удалён\n')
+        init()
+    elif menu_position == 4:
+        exit()
     else:
         print('Ошибка ввода')
         init()

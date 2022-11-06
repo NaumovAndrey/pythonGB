@@ -30,7 +30,10 @@ def print_base(li_dct):
     pandas.set_option('display.max_columns', None)    # показывает все столбцы
     pandas.options.display.expand_frame_repr = False    # убирает перенос столбцов
     #data.head()
-    print(df)
+    return df
+
+def printDB(db):
+    print(db)
 
 def output_from_the_user(text):
     '''Получает ключ словаря от пользователя (выбор элемента меню)'''
@@ -77,3 +80,6 @@ def viewing_employees():
           'Поиск по дате рождения']
     dct = {i + 1: li[i] for i in range(0, len(li))}
     return dct
+
+
+#print(add_directory())
