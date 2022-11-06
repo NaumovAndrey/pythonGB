@@ -17,19 +17,19 @@ def add_database(dct):
                 file.write(f'{value}\n')
 
 
-def getting_data_from_file():
-    '''Получение данных из файла'''
-    dct = dict()  # -> dict{key: [array(value)]}
-    with open('employee.txt', 'r', encoding='UTF-8') as file:
-        for line in file.readlines():
-            line = line.strip()
-            key, value = line.split(":", 1)
-            value = value.rstrip('\n')
-            if dct.get(key, False) is False:  # если в словаре нет такого ключа
-                dct[key] = [value]
-            else:  # если есть
-                dct[key].append(value)  # Нет проверки на одинаковое значение (id = ФИО и год рождения или создать ~ паспорт как id)
-    return dct
+# def getting_data_from_file():
+#     '''Получение данных из файла'''
+#     dct = dict()  # -> dict{key: [array(value)]}
+#     with open('employee.txt', 'r', encoding='UTF-8') as file:
+#         for line in file.readlines():
+#             line = line.strip()
+#             key, value = line.split(":", 1)
+#             value = value.rstrip('\n')
+#             if dct.get(key, False) is False:  # если в словаре нет такого ключа
+#                 dct[key] = [value]
+#             else:  # если есть
+#                 dct[key].append(value)  # Нет проверки на одинаковое значение (id = ФИО и год рождения или создать ~ паспорт как id)
+#     return dct
 
 
 def del_line(dct):

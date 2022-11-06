@@ -3,7 +3,7 @@ import pandas
 
 def greeting():
     '''Приветствие программы'''
-    print('Картотека сотрудников\nМеню:')
+    print('Картотека сотрудников\nМеню:\n')
 
 
 def menu_user():
